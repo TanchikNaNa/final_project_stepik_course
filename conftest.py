@@ -33,4 +33,5 @@ def browser(request):
     yield browser
     browser.implicitly_wait(5)
     print("\nquit browser..")
+    time.sleep(10)
     browser.quit()
