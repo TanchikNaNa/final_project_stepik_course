@@ -20,6 +20,14 @@ class ProductPage(BasePage):
         assert basket_product_name==product_name, "Uncorrect product's name in basket"
         assert basket_product_price==product_price, "Uncorrect product's price in basket"
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.basket_find_product_name), \
+        "Success message is presented, but should not be"
+
+    def should_went_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.basket_find_product_name), \
+        "Success message is presented, but should not be"
+
 
 
 
